@@ -172,7 +172,8 @@ namespace MagicVilla_Web.Controllers
             if (response != null && response.IsSuccess)
             {
                 TempData["success"] = "VillaNumber Delete Successfully";
-                return RedirectToAction(nameof(IndexVillaNumber), HttpContext.Session.GetString(SD.SessionToken));
+                //return RedirectToAction(nameof(IndexVillaNumber), HttpContext.Session.GetString(SD.SessionToken));
+                return RedirectToAction(nameof(IndexVillaNumber));
             }
             TempData["error"] = "Error Encounter.";
             return View(model);
