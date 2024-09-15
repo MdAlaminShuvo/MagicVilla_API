@@ -56,6 +56,7 @@ namespace MagicVilla_Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterationRequestDTO obj)
         {
+            obj.Role = "admin";
             APIResponse result = await _authService.RegisterAsync<APIResponse>(obj);    
             if(result != null && result.IsSuccess)
             {
